@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+		table {
+  border-collapse: collapse;
+  width: 100%;
+  }
+  tr{
+	color: #ddd;
+  }
+  tr:hover {background-color: #000000;}
+  th, td {
+  border: 1px solid #000000;
+  padding: 8px;
+  text-align: left;
+  }
+  th {
+  background-color: rgba(65, 255, 201, 0.685);
+  color: rgb(0, 0, 0);
+  }
+  body{
+  background-color: #0b2b39;
+  }
+  .center {
+	color: #35ffc9;
+    border: 2px solid;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+  }
+  #search-input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+  border: 1px solid #0b0b0b;
+  border-radius: 3px;
+  }
+	</style>
+    <title>Filtered Timetable</title>
+  </head>
+  <body>
+    <h1>Filtered Timetable</h1>
+    <table>
+      {{ fil_html|safe }}
+    </table>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!-- <html>
+<head>
+  <title>Timetable</title>
+</head>
+<body>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="batch">Batch:</label>
+    <input type="text" name="batch">
+    <label for="day">Day:</label>
+    <input type="text" name="day">
+    <button type="submit">View Timetable</button>
+  </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>BTECH TIME TABLE</title>
+<div class="center">
+<label for="search-input-1">Batch:</label>
+<input type="text" id="search-input-1" placeholder="Enter Batch no." list="search-suggestions">
+<datalist id="search-suggestions">
+<option value="CS410">CS410</option>
+<option value="CE41">CE41</option>
+<option value="CS41">CS41</option>
+<option value="CS42">CS42</option>
+<option value="CS43">CS43</option>
+<option value="CS44">CS44</option>
+<option value="CS45">CS45</option>
+<option value="CS46">CS46</option>
+<option value="CS47">CS47</option>
+<option value="CS48">CS48</option>
+<option value="CS49">CS49</option>
+<option value="EC42">EC41</option>
+<option value="EM41">EM41</option>
+<option value="CSM">CSM</option>
+<option value="BIM">BIM</option>
+<option value="BI41">BI41</option>
+<option value="BT41">BT41</option>
+<option value="IT41">IT41</option>
+<option value="IT42">IT42</option>
+</datalist>
+<button onclick="searchTable('search-input-1')">Search</button><br />
+</div>
+<label for="search-input-2">Faculty: </label>
+<input type="text" id="search-input-2" placeholder="Enter Faculty" list="search-suggestions-2">
+<datalist id="search-suggestions-2">
+<option value="RJK">RJK</option>
+<option value="RRA">RRA</option>
+<option value="PKG">PKG</option>
+<option value="BKP">BKP</option>
+<option value="TGM">TGM</option>
+<option value="UDB">UDB</option>
+<option value="NTJ">NTJ</option>
+<option value="PKP">PKP</option>
+<option value="NJP">NJP</option>
+<option value="TTS">TTS</option>
+<option value="CGP">CGP</option>
+<option value="SDS">SDS</option>
+<option value="JTV">JTV</option>
+<option value="DHA">DHA</option>
+<option value="MBI">MBI</option>
+<option value="ASA">ASA</option>
+<option value="PTK">PTK</option>
+<option value="PDG">PDG</option>
+<option value="AMN">AMN</option>
+<option value="SGL">SGL</option>
+<option value="SWT">SWT</option>
+<option value="SML">SML</option>
+<option value="SST">SST</option>
+<option value="RKU">RKU</option>
+<option value="PNS">PNS</option>
+<option value="RRA">RRA</option>
+<option value="RKI">RKI</option>
+<option value="HRI">HRI</option>
+<option value="SHR">SHR</option>
+<option value="SLD">SLD</option>
+<option value="NFK">NFK</option>
+<option value="AKJ">AKJ</option>
+<option value="ALK">ALK</option>
+<option value="NVN">NVN</option>
+<option value="VKB">VKB</option>
+<option value="EMP">EMP</option>
+<option value="PKR">PKR</option>
+</datalist>
+<button onclick="searchTable('search-input-2')">Search</button><br />
+
+<label for="search-input-3">Class Code: </label>
+<input type="text" id="search-input-3" placeholder="Enter Class code"
+list="search-suggestions-3">
+<datalist id="search-suggestions-3">
+<option value="P-18B17CI474">P-18B17CI474 </option>
+<option value="P-18B17CI473">P-18B17CI473</option>
+<option value="P-18B17CI471">P-18B17CI471</option>
+<option value="P-18B17CI472">P-18B17CI472</option>
+<option value="P-18B17EC371">P-18B17EC371</option>
+<option value="L-18B11CI414">L-L-18B11CI414</option>
+<option value="L-18B11EC413">L-18B11EC413</option>
+<option value="L-18B11GE411">L-18B11GE411</option>
+<option value="L-18B11MA411 ">L-18B11MA411</option>
+<option value="L-18B11MA413 ">L-18B11MA413</option>
+<option value="P-18B17BT474">P-18B17BT474</option>
+<option value="T-20B11EM412 ">T-20B11EM412 </option>
+<option value="T-18B11BT413">T-18B11BT413</option>
+<option value="L-18B11EC411">L-18B11EC411</option>
+<option value="L-18B11HS411">L-18B11HS411</option>
+<option value="L-20B11EM411">L-20B11EM411</option>
+<option value="P-20B17EM472">P-20B17EM472</option>
+<option value="L-18B11CI411">L-18B11CI411</option>
+<option value="T-18B11CI413">T-18B11CI413</option>
+<option value="T-18B11CI415">T-18B11CI415</option>
+<option value="L-18B11CE415">L-18B11CE415</option>
+<option value="L-18B11BT412">L-18B11BT412</option>
+<option value="L-18B11BT411">L-18B11BT411</option>
+<option value="L-18B11CE411">L-18B11CE411</option>
+<option value="L-18B11CE414">L-18B11CE414</option>
+<option value="L-18B11BI412">L-18B11BI414</option>
+<option value="L-18B11BI411">L-18B11BI413</option>
+</datalist>
+<button onclick="searchTable('search-input-3')">Search</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="timetable.css"/>
+<script src="timetable.js"></script>
+</head>
+<body>
+<div id="table-container"></div>
+</body>
+</html>
