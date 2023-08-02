@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 def timetable(request):
     # Load the Excel sheet from Google Sheets
     sheet = 'BTECH 5 SEM'
-    time_table_df = pd.read_excel('D:/Django/webtech/playground/templates/sheet.xlsx' )
+    time_table_df = pd.read_excel('D:/Django/webtech/playground/templates/sheet3.xlsx',sheet_name = sheet )
     time_table_df.iloc[:, 0] = time_table_df.iloc[:, 0].ffill()
     time_table_df.fillna('No Class', inplace=True)
    
@@ -32,7 +32,8 @@ def filtered(request):
             code = request.POST['code']
         
         # Load the Excel sheet from Google Sheets
-        time_table_df = pd.read_excel('D:/Django/webtech/playground/templates/sheet.xlsx')
+        sheet = 'BTECH 5 SEM'
+        time_table_df = pd.read_excel('D:/Django/webtech/playground/templates/sheet3.xlsx',sheet_name = sheet)
 
         time_table_df.iloc[:, 0] = time_table_df.iloc[:, 0].ffill()
         time_table_df.fillna('No Class', inplace=True)

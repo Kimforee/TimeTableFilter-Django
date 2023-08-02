@@ -11,24 +11,35 @@
   width: 100%;
   }
   tr{
-	color: #ddd;
+	color: #000000;
   }
   th, td {
   border: 1px solid #000000;
   padding: 8px;
   text-align: left;
   }
-  tr:hover {background-color: #000000;}
+  th:hover {background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+  td:hover {background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+  tr:hover {background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
   th {
-  background-color: rgba(65, 255, 201, 0.685);
+  background-color: rgb(208, 227, 255);
   color: rgb(0, 0, 0);
   }
   body{
-  background-color: #0b2b39;
+  background-color: #ffffff;
   }
   .center {
-	color: #35ffc9;
-    border: 2px solid;
+	color: #000000;
+    border-bottom: 2px solid;
+	border-left: 2px solid;
+	border-right: 2px solid;
+	border-radius: 6px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -46,48 +57,53 @@
   border-radius: 3px;
   }
   tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(242, 227, 255),;
 }
 
 th:nth-child(even),td:nth-child(even) {
-  background-color: rgba(0, 111, 122, 0.633);
+  background-color: #baccff;
 }
 	</style>
 </head>
 <body>
+	
 <div>
 	<form method="POST" action="{% url 'filtered' %}">
+		<br>
+		<br>
 	<div class="center">
 		{% csrf_token %}
-		<label  for="batch">Batch:</label>
-		<input type="text" id="batch" name="batch" placeholder="Enter Batch no." list="search-suggestions">
+		<label  for="batch">Batch : </label>
+		<input type="text" id="batch" name="batch" 
+		placeholder="Enter Batch no." list="search-suggestions">
 		<datalist id="search-suggestions">
-		<option value="CS410">CS410</option>
-		<option value="CE41">CE41</option>
-		<option value="CS41">CS41</option>
-		<option value="CS42">CS42</option>
-		<option value="CS43">CS43</option>
-		<option value="CS44">CS44</option>
-		<option value="CS45">CS45</option>
-		<option value="CS46">CS46</option>
-		<option value="CS47">CS47</option>
-		<option value="CS48">CS48</option>
-		<option value="CS49">CS49</option>
-		<option value="EC42">EC41</option>
-		<option value="EM41">EM41</option>
+		<option value="CS510">CS510</option>
+		<option value="CE51">CE51</option>
+		<option value="CS51">CS51</option>
+		<option value="CS52">CS52</option>
+		<option value="CS53">CS53</option>
+		<option value="CS54">CS54</option>
+		<option value="CS55">CS55</option>
+		<option value="CS56">CS56</option>
+		<option value="CS57">CS57</option>
+		<option value="CS58">CS58</option>
+		<option value="CS59">CS59</option>
+		<option value="EC52">EC51</option>
+		<option value="EM51">EM51</option>
 		<option value="CSM"> CSM</option>
 		<option value="BIM"> BIM</option>
-		<option value="BI41">BI41</option>
-		<option value="BT41">BT41</option>
+		<option value="BI51">BI51</option>
+		<option value="BT51">BT51</option>
 		<option value="IT51">IT51</option>
 		<option value="IT52">IT52</option>
 		</datalist>
 		
-
 	</div>
+	<br>
 	<div class="center">
-		<label for="teacher">Faculty: </label>
-		<input type="text" id="teacher" name="teacher" placeholder="Enter Faculty" list="search-suggestions-2">
+		<label for="teacher">Faculty : </label>
+		<input type="text" id="teacher" name="teacher" 
+		placeholder="Enter Faculty" list="search-suggestions-2">
 		<datalist id="search-suggestions-2">
 		<option value="(RJK)">(RJK)</option>
 		<option value="(RRA)">(RRA)</option>
@@ -129,12 +145,14 @@ th:nth-child(even),td:nth-child(even) {
 		</datalist>
 		
 	</div>
+	<br>
 		<div class="center">
-		<label for="code">Class Code: </label>
-		<input type="text" id="code" name="code" placeholder="Enter Class code"
+		<label for="code">Class Code : </label>
+		<input type="text" id="code" name="code" 
+		placeholder="Enter Class code"
 		list="search-suggestions-3">
 		<datalist id="search-suggestions-3">
-		<option value="P-18B17CI474">P-18B17CI474</option>
+		<option value="L-18B1WPH532">L-18B1WPH532</option>
 		<option value="P-18B17CI473">P-18B17CI473</option>
 		<option value="P-18B17CI471">P-18B17CI471</option>
 		<option value="P-18B17CI472">P-18B17CI472</option>
@@ -162,17 +180,32 @@ th:nth-child(even),td:nth-child(even) {
 		<option value="L-18B11BI412">L-18B11BI414</option>
 		<option value="L-18B11BI411">L-18B11BI413</option>
 		</datalist>
-		<br>
-		
-	</div><br>
-	<input class="center" type="submit" value="Filter Timetable" style="width: fit-content;background-color: #0b0b0b;">
+	</div>
+	
+	<button class="center" type="submit"
+	       style="width: fit-content;;
+		          width: 150px;
+				  height: 50px;
+				  margin-top: 50px;
+				  font-weight: 700;
+				  font-size: 14px;
+				  letter-spacing: 1px;
+				  border-radius: 6px;
+				  margin-top: 15px;
+				  border-bottom: 2px solid;
+				  border-left: 2px solid;
+				  border-right: 2px solid;
+				  background-color: #B6E0FF;
+				  ">Filter now</button>
 		<div 
 		id="table-container">
 		</div>
 	</form>
 	</div>
 	<br>
-		<h1  class="center" style="color: rgb(0, 0, 0); background-color: rgb(138, 255, 239);">Timetable</h1>
+		<h1  class="center" style="color: rgb(0, 0, 0);
+		 background-color: rgb(180, 208, 255);
+		 border-radius: 6px;">Timetable</h1>
 		<br>
 		{{ table_html|safe }}
 </body>

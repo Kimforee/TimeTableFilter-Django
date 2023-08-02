@@ -48,7 +48,7 @@ def filtered(request):
 def timetable(request):
 
             # Get the file path of the Excel sheet
-            file_path = 'D:/Django/webtech/playground/templates/sheet.xlsx'
+            file_path = 'D:/Django/webtech/playground/templates/sheet3.xlsx'
             # Read the Excel sheet C:\Users\91821\Desktop\Py playground\sheet.xlsxeet using pandas
             df = pd.read_excel(file_path, sheet_name='BTECH 4 SEM')
             table_html = df.to_html(index=False)
